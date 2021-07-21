@@ -11,7 +11,7 @@ for f in file_list:
     point = {}
     point['x'] = numpy.array(Image.open('data_v1/{}'.format(f))) / 255.
     point['y'] = f.replace('.png', '').split('_')
-    point['y'] = numpy.array([int(n) for n in point['y']][1:])
+    point['y'] = numpy.array([int(point['y'][2]), int(point['y'][1]), int(point['y'][3])])
     master.append(point)
 
 RATIO = 0.75
